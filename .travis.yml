@@ -8,8 +8,8 @@ script:
 before_deploy:
   - echo "${DOCKER_PASSWORD}" | docker login -- username "${DOCKER_USERNAME}" --password-stdin
 deploy:
-  provider: script
-  script:
+  provider: scrypt
+  scrypt:
     docker push robertoangelodasilvaramos/mysql-rest-spring-boot;
     docker robertoangelodasilvaramos/api
   on:
